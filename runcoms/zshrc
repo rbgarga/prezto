@@ -11,3 +11,34 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+export LC_CTYPE="en_US.UTF-8"
+export EDITOR=vim
+export VISUAL=vim
+export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.homebrew_gh_api_token)
+
+# aliases
+alias ff='find ./ -iname $*'
+alias vi='vim'
+alias ssh-kr='ssh-keygen -R $*'
+
+# I don't like questions
+unalias rm
+unalias cp
+unalias mv
+
+# Avoid this boring message "do you wish to see all N possibilities?
+export LISTMAX=1000
+
+# Disable correct completely, it's PITA
+unsetopt correct correctall
+
+# Add ~/bin to PATH
+export PATH=${PATH}:~/bin
+
+# alt+. insert last word from previous command
+bindkey -M viins '\e.' insert-last-word
+
+setopt clobber
+
+# Fix git reset HEAD^
+unsetopt nomatch
