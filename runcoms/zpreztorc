@@ -23,21 +23,37 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-zstyle ':prezto:load' pmodule \
-  'environment' \
-  'terminal' \
-  'editor' \
-  'history' \
-  'history-substring-search' \
-  'directory' \
-  'spectrum' \
-  'utility' \
-  'completion' \
-  'prompt' \
-  'archive' \
-  'git' \
-  'homebrew' \
-  'osx'
+if [ "$(uname -s)" = "Darwin" ]; then
+	zstyle ':prezto:load' pmodule \
+	  'environment' \
+	  'terminal' \
+	  'editor' \
+	  'history' \
+	  'history-substring-search' \
+	  'directory' \
+	  'spectrum' \
+	  'utility' \
+	  'completion' \
+	  'prompt' \
+	  'archive' \
+	  'git' \
+	  'homebrew' \
+	  'osx'
+else
+	zstyle ':prezto:load' pmodule \
+	  'environment' \
+	  'terminal' \
+	  'editor' \
+	  'history' \
+	  'history-substring-search' \
+	  'directory' \
+	  'spectrum' \
+	  'utility' \
+	  'completion' \
+	  'prompt' \
+	  'archive' \
+	  'git'
+fi
 
 #
 # Editor
