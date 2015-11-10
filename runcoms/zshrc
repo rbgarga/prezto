@@ -44,3 +44,5 @@ setopt clobber
 
 # Fix git reset HEAD^
 unsetopt nomatch
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
