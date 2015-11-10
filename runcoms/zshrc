@@ -46,7 +46,7 @@ setopt clobber
 unsetopt nomatch
 
 # keychain
-if which -s keychain; then
+if which -s keychain 2>/dev/null; then
 	eval $(keychain --eval id_rsa)
 fi
 
