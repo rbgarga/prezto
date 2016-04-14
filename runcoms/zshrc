@@ -39,7 +39,9 @@ export PATH=${PATH}:~/bin
 export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # XGETTEXT
-export XGETTEXT=/usr/local/Cellar/gettext/0.19.7/bin/xgettext
+if [ $(uname -s) = "Darwin" ]; then
+	export XGETTEXT=/usr/local/Cellar/gettext/0.19.7/bin/xgettext
+fi
 
 # alt+. insert last word from previous command
 bindkey -M viins '\e.' insert-last-word
