@@ -36,6 +36,10 @@ unsetopt correct correctall
 
 # Add ~/bin to PATH
 export PATH=${PATH}:~/bin
+export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+
+# XGETTEXT
+export XGETTEXT=/usr/local/Cellar/gettext/0.19.7/bin/xgettext
 
 # alt+. insert last word from previous command
 bindkey -M viins '\e.' insert-last-word
