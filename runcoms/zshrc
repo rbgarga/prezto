@@ -60,7 +60,7 @@ setopt clobber
 unsetopt nomatch
 
 # keychain
-if which -s keychain >/dev/null 2>&1; then
+if which -s keychain >/dev/null 2>&1 && test -f ~/.ssh/id_rsa; then
 	eval $(keychain --eval id_rsa)
 fi
 
