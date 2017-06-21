@@ -37,10 +37,12 @@ unsetopt correct correctall
 
 # Add ~/bin to PATH
 PATH=${PATH}:~/bin
-PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
-# XGETTEXT
+# macOS specific bits
 if [ $(uname -s) = "Darwin" ]; then
+	if which -s brew >/dev/null 2>&1; then
+		PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+	fi
 	export XGETTEXT=/usr/local/Cellar/gettext/0.19.8.1/bin/xgettext
 	export MSGFMT=/usr/local/Cellar/gettext/0.19.8.1/bin/msgfmt
 	export GOPATH=/usr/local/opt/go/libexec
