@@ -25,6 +25,10 @@ alias ff='find ./ -iname $*'
 alias vi='vim'
 alias ssh-kr='ssh-keygen -R $*'
 
+if [ -f ~/.azure-cli/bin/az ]; then
+	alias az='~/.azure-cli/bin/az'
+fi
+
 # I don't like questions
 unalias rm
 unalias cp
