@@ -38,7 +38,13 @@ if [ "$(uname -s)" = "Darwin" ]; then
 	  'archive' \
 	  'git' \
 	  'homebrew' \
-	  'osx'
+	  'osx' \
+	  'fasd' \
+	  'rsync' \
+	  'spectrum' \
+	  'ssh' \
+	  'tmux' \
+	  'autosuggestions'
 else
 	zstyle ':prezto:load' pmodule \
 	  'environment' \
@@ -52,7 +58,13 @@ else
 	  'completion' \
 	  'prompt' \
 	  'archive' \
-	  'git'
+	  'git' \
+	  'fasd' \
+	  'rsync' \
+	  'spectrum' \
+	  'ssh' \
+	  'tmux' \
+	  'autosuggestions'
 fi
 
 #
