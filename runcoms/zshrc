@@ -64,11 +64,6 @@ setopt clobber
 # Fix git reset HEAD^
 unsetopt nomatch
 
-# keychain
-if which -s keychain >/dev/null 2>&1 && test -f ~/.ssh/id_rsa; then
-	eval $(keychain --eval id_rsa)
-fi
-
 # iTerm2 integration
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
