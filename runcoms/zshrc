@@ -25,6 +25,15 @@ alias ff='find ./ -iname $*'
 alias vi='vim'
 alias ssh-kr='ssh-keygen -R $*'
 
+# If it's a centos / ubuntu, enable do_configure
+unset ID
+test -f /etc/os-release \
+	&& source /etc/os-release
+
+if [ "${ID}" = "centos" -o "${ID}" = "ubuntu" ]; then
+	alias do_configure='./configure --build=x86_64-redhat-linux-gnu --host=x86_64-redhat-linux-gnu --program-prefix= --prefix=/usr --exec-prefix=/usr --bindir=/usr/bin --sbindir=/usr/sbin --sysconfdir=/etc --datadir=/usr/share --includedir=/usr/include --libdir=/usr/lib64 --libexecdir=/usr/libexec --localstatedir=/var --sharedstatedir=/var/lib --mandir=/usr/share/man --infodir=/usr/share/info'
+fi
+
 if [ -f ~/.azure-cli/bin/az ]; then
 	alias az='~/.azure-cli/bin/az'
 fi
