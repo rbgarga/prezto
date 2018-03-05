@@ -45,7 +45,6 @@ if [ "$(uname -s)" = "Darwin" ]; then
 	  'fasd' \
 	  'rsync' \
 	  'spectrum' \
-	  'ssh' \
 	  'tmux' \
 	  'autosuggestions'
 else
