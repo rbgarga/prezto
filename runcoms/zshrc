@@ -53,7 +53,7 @@ unsetopt correct correctall
 PATH=${PATH}:~/bin
 
 # macOS specific bits
-if [ $(uname -s) = "Darwin" ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
 	if which -s brew >/dev/null 2>&1; then
 		PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 	fi

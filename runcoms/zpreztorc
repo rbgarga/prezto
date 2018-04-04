@@ -26,7 +26,7 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-if [ "$(uname -s)" = "Darwin" ]; then
+if [[ "$OSTYPE" == darwin* ]]; then
 	zstyle ':prezto:load' pmodule \
 	  'environment' \
 	  'terminal' \
