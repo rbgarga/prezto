@@ -45,6 +45,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	  'fasd' \
 	  'rsync' \
 	  'spectrum' \
+	  'ssh' \
 	  'tmux'
 else
 	zstyle ':prezto:load' pmodule \
