@@ -51,7 +51,7 @@ PATH=${PATH}:~/bin
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
 	if which -s brew >/dev/null 2>&1; then
-		PATH="$(brew --prefix php@5.6)/bin:$PATH"
+		PATH="$(brew --prefix php@7.3)/bin:$PATH"
 	fi
 	export XGETTEXT=/usr/local/Cellar/gettext/0.19.8.1/bin/xgettext
 	export MSGFMT=/usr/local/Cellar/gettext/0.19.8.1/bin/msgfmt
