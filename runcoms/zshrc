@@ -76,5 +76,5 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 unalias scp
 
 # use a sane git
-test -f /opt/rh/rh-git29/enable \
-	&& source /opt/rh/rh-git29/enable
+test -f /opt/rh/rh-git218/enable \
+	&& source /opt/rh/rh-git218/enable
