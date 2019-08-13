@@ -78,3 +78,9 @@ unalias scp
 # use a sane git
 test -f /opt/rh/rh-git218/enable \
 	&& source /opt/rh/rh-git218/enable
+
+if [ -e /usr/local/bin/ondir ]; then
+	chpwd() {
+		eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+	}
+fi
