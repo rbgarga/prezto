@@ -24,6 +24,7 @@ fi
 alias ff='find ./ -iname $*'
 alias vi='vim'
 alias ssh-kr='ssh-keygen -R $*'
+alias weather='curl -s http://v2.wttr.in/Iracemapolis'
 
 # If it's a centos / ubuntu, enable do_configure
 unset ID
@@ -83,4 +84,13 @@ if [ -e /usr/local/bin/ondir ]; then
 	chpwd() {
 		eval "`ondir \"$OLDPWD\" \"$PWD\"`"
 	}
+fi
+
+# Wayland
+if [ -z "$XDG_RUNTIME_DIR" ]; then
+	export XDG_RUNTIME_DIR=/tmp/sway
+fi
+if [ ! -d "$XDG_RUNTIME_DIR" ]; then
+	mkdir -p $XDG_RUNTIME_DIR
+	chmod 0700 $XDG_RUNTIME_DIR
 fi
