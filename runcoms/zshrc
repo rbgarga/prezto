@@ -51,13 +51,12 @@ PATH=${PATH}:~/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
+	export ANDROID_HOME=~/Library/Android/sdk
 	if which -s brew >/dev/null 2>&1; then
-		PATH="$(brew --prefix php@7.3)/bin:$PATH"
+		PATH="/usr/local/opt/gettext/bin:$(brew --prefix php@7.3)/bin:$PATH"
 	fi
-	export XGETTEXT=/usr/local/Cellar/gettext/0.19.8.1/bin/xgettext
-	export MSGFMT=/usr/local/Cellar/gettext/0.19.8.1/bin/msgfmt
 	export GOPATH=/usr/local/opt/go/libexec
-	PATH=$PATH:/usr/local/opt/go/libexec/bin
+	PATH=$PATH:/usr/local/opt/go/libexec/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:~/work/flutter/bin
 fi
 
 export PATH
