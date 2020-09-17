@@ -53,10 +53,10 @@ PATH=${PATH}:~/bin
 if [[ "$OSTYPE" == darwin* ]]; then
 	export ANDROID_HOME=~/Library/Android/sdk
 	if which -s brew >/dev/null 2>&1; then
-		PATH="/usr/local/opt/gettext/bin:$(brew --prefix php@7.3)/bin:$PATH"
-		if [ -d "$(brew --prefix asdf 2>/dev/null)" ]; then
-			. $(brew --prefix asdf)/asdf.sh
-		fi
+#		PATH="/usr/local/opt/gettext/bin:$(brew --prefix php@7.3)/bin:$PATH"
+#		if [ -d "$(brew --prefix asdf 2>/dev/null)" ]; then
+#			. $(brew --prefix asdf)/asdf.sh
+#		fi
 	fi
 	export GOPATH=/usr/local/opt/go/libexec
 	PATH=$PATH:/usr/local/opt/go/libexec/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:~/work/flutter/bin
