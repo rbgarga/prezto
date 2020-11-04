@@ -256,4 +256,4 @@ zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 # zstyle ':prezto:module:utility' safe-ops 'yes'
 
 # Diff highlight is broken
-#zstyle ':prezto:module:utility:diff' color 'no'
+zstyle ':prezto:module:utility:diff' color 'no'
