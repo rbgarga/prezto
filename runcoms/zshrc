@@ -60,6 +60,8 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	fi
 	export GOPATH=/usr/local/opt/go/libexec
 	PATH=$PATH:/usr/local/opt/go/libexec/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:~/work/flutter/bin
+	PATH="/usr/local/opt/php@7.4/bin:$PATH"
+	PATH="/usr/local/opt/php@7.4/sbin:$PATH"
 fi
 
 export PATH
