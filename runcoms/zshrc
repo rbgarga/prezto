@@ -22,7 +22,9 @@ fi
 
 # aliases
 alias ff='find ./ -iname $*'
-alias vi='vim'
+alias vi='vim -p'
+alias vim='vim -p'
+alias gvim='gvim -p'
 alias ssh-kr='ssh-keygen -R $*'
 alias weather='curl -s http://v2.wttr.in/Iracemapolis'
 
@@ -51,6 +53,8 @@ PATH=${PATH}:~/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
+	export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
+	export HOMEBREW_NO_ENV_HINTS=1
 	export ANDROID_HOME=~/Library/Android/sdk
 	if which -s brew >/dev/null 2>&1; then
 #		PATH="/usr/local/opt/gettext/bin:$(brew --prefix php@7.3)/bin:$PATH"
