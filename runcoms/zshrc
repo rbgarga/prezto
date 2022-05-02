@@ -22,8 +22,8 @@ fi
 
 # aliases
 alias ff='find ./ -iname $*'
-alias vi='vim -p'
-alias vim='vim -p'
+alias vi='nvim'
+#alias vim='vim -p'
 alias gvim='gvim -p'
 alias ssh-kr='ssh-keygen -R $*'
 alias weather='curl -s http://v2.wttr.in/Iracemapolis'
