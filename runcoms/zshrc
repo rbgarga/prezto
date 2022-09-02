@@ -13,8 +13,8 @@ fi
 # Customize to your needs...
 export LC_CTYPE="en_US.UTF-8"
 export LC_COLLATE="C"
-export EDITOR=vim
-export VISUAL=vim
+export EDITOR=nvim
+export VISUAL=nvim
 export ANDROID_HOME=/usr/local/opt/android-sdk
 if [ -f ~/.homebrew_gh_api_token ]; then
 	export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.homebrew_gh_api_token)
@@ -24,7 +24,7 @@ fi
 alias ff='find ./ -iname $*'
 alias vi='nvim'
 #alias vim='vim -p'
-alias gvim='gvim -p'
+alias gvim='nvim'
 alias ssh-kr='ssh-keygen -R $*'
 alias weather='curl -s http://v2.wttr.in/Iracemapolis'
 
