@@ -51,7 +51,7 @@ export LISTMAX=1000
 unsetopt correct correctall
 
 # Add ~/bin to PATH
-PATH=${PATH}:~/bin:/Users/garga/.local/bin
+PATH=${PATH}:~/bin:/Users/garga/.local/bin:~/.emacs.d/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
