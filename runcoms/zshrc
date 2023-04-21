@@ -55,7 +55,6 @@ PATH=${PATH}:~/bin:/Users/garga/.local/bin:~/.emacs.d/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
-	export HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK=1
 	export HOMEBREW_NO_ENV_HINTS=1
 	export ANDROID_HOME=~/Library/Android/sdk
 	if which -s brew >/dev/null 2>&1; then
