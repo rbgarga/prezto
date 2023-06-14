@@ -60,6 +60,10 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 fi
 
+if $(which go >/dev/null 2>&1); then
+	PATH=$PATH:$(go env GOPATH)/bin
+fi
+
 export PATH
 
 # alt+. insert last word from previous command
