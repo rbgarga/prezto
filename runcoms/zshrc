@@ -51,22 +51,13 @@ export LISTMAX=1000
 unsetopt correct correctall
 
 # Add ~/bin to PATH
-PATH=${PATH}:~/bin:/Users/garga/.local/bin:~/.emacs.d/bin
+PATH=${PATH}:~/bin:~/.local/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then
 	export HOMEBREW_NO_ENV_HINTS=1
-	export ANDROID_HOME=~/Library/Android/sdk
-	if which -s brew >/dev/null 2>&1; then
-#		PATH="/usr/local/opt/gettext/bin:$(brew --prefix php@7.3)/bin:$PATH"
-#		if [ -d "$(brew --prefix asdf 2>/dev/null)" ]; then
-#			. $(brew --prefix asdf)/asdf.sh
-#		fi
-	fi
-	export GOPATH=/usr/local/opt/go/libexec
-	PATH=$PATH:/usr/local/opt/go/libexec/bin:${ANDROID_HOME}/tools:${ANDROID_HOME}/platform-tools:~/work/flutter/bin
-	PATH="/usr/local/opt/php@7.4/bin:$PATH"
-	PATH="/usr/local/opt/php@7.4/sbin:$PATH"
+	PATH="/opt/homebrew/bin:$PATH"
+	PATH="/opt/homebrew/opt/make/libexec/gnubin:$PATH"
 fi
 
 export PATH
