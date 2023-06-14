@@ -89,9 +89,10 @@ unalias scp
 test -f /opt/rh/rh-git218/enable \
 	&& source /opt/rh/rh-git218/enable
 
-if [ -e /usr/local/bin/ondir -o -e /usr/bin/ondir ]; then
+if which ondir >/dev/null 2>&1; then
 	chpwd() {
-		eval "`ondir \"$OLDPWD\" \"$PWD\"`"
+		ondir=$(which ondir)
+		eval "`${ondir} \"$OLDPWD\" \"$PWD\"`"
 	}
 fi
 
