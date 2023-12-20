@@ -84,12 +84,30 @@ unalias scp
 test -f /opt/rh/rh-git218/enable \
 	&& source /opt/rh/rh-git218/enable
 
-if which ondir >/dev/null 2>&1; then
-	chpwd() {
-		ondir=$(which ondir)
-		eval "`${ondir} \"$OLDPWD\" \"$PWD\"`"
-	}
-fi
+chpwd () {
+	case $PWD in
+		${HOME}/work/tnsr*|${HOME}/work/*sense* )
+			if [ "$_ONDIR_WORK" != 1 ]; then
+				export GIT_AUTHOR_NAME='Renato Botelho do Couto'
+				export GIT_AUTHOR_EMAIL='renato@netgate.com'
+				export GIT_COMMITTER_NAME='Renato Botelho do Couto'
+				export GIT_COMMITTER_EMAIL='renato@netgate.com'
+				echo 'Switched to git user/email settings for "work".'
+				export _ONDIR_WORK=1
+			fi
+			;;
+		* )
+			if [ "$_ONDIR_WORK" = 1 ]; then
+				unset GIT_AUTHOR_NAME
+				unset GIT_AUTHOR_EMAIL
+				unset GIT_COMMITTER_NAME
+				unset GIT_COMMITTER_EMAIL
+				echo 'Switched back to global git user/email settings.'
+				export _ONDIR_WORK=0
+			fi
+			;;
+	esac
+}
 
 # Wayland
 if [ -z "$XDG_RUNTIME_DIR" ]; then
