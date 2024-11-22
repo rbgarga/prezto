@@ -22,10 +22,13 @@ if [ -f ~/.homebrew_gh_api_token ]; then
 	export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/.homebrew_gh_api_token)
 fi
 
+grub-list() {
+	awk -F\' '$1=="menuentry " || $1=="submenu " {print i++ " : " $2}; /\smenuentry / {print "\t" i-1">"j++ "  : " $2};' /boot/grub/grub.cfg
+}
+
 # aliases
 alias ff='find ./ -iname $*'
 alias vi='nvim'
-#alias vim='vim -p'
 alias gvim='nvim'
 alias ssh-kr='ssh-keygen -R $*'
 alias weather='curl -s http://v2.wttr.in/Iracemapolis'
