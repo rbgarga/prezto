@@ -86,7 +86,7 @@ test -f /opt/rh/rh-git218/enable \
 
 chpwd () {
 	case $PWD in
-		${HOME}/work/(tnsr*|*sense*|pflinux*|chimera*|engineering*) )
+		${HOME}/work/(tnsr*|*sense*|pflinux*|chimera*|engineering*|gosense*) )
 			if [ "$_ONDIR_WORK" != 1 ]; then
 				export GIT_AUTHOR_NAME='Renato Botelho do Couto'
 				export GIT_AUTHOR_EMAIL='renato@netgate.com'
