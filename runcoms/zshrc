@@ -99,6 +99,7 @@ test -f /opt/rh/rh-git218/enable \
 	&& source /opt/rh/rh-git218/enable
 
 chpwd () {
+	test -e ${HOME}/.gitconfig-work && return
 	case $PWD in
 		${HOME}/work/*)
 			if [ "$_ONDIR_WORK" != 1 ]; then
