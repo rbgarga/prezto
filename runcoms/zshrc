@@ -64,8 +64,8 @@ export LISTMAX=1000
 # Disable correct completely, it's PITA
 unsetopt correct correctall
 
-# Add ~/bin to PATH
-PATH=${PATH}:~/bin:~/.local/bin
+# Ensure ~/.local/bin is in PATH (~/bin is no longer used)
+PATH=${PATH}:~/.local/bin
 
 # macOS specific bits
 if [[ "$OSTYPE" == darwin* ]]; then

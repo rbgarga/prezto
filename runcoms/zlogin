@@ -28,5 +28,5 @@ if [[ -o INTERACTIVE && -t 2 ]]; then
 
 fi >&2
 
-# Daily chezmoi update, at most once every 24h (script from chezmoi-managed ~/bin)
-[[ -x "$HOME/bin/chezmoi-login-update.sh" ]] && "$HOME/bin/chezmoi-login-update.sh" &!
+# Daily chezmoi update, at most once every 24h (script from chezmoi-managed ~/.local/bin)
+[[ -x "$HOME/.local/bin/chezmoi-login-update.sh" ]] && "$HOME/.local/bin/chezmoi-login-update.sh" &!
