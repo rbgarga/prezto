@@ -83,6 +83,18 @@ export PATH
 # alt+. insert last word from previous command
 bindkey -M viins '\e.' insert-last-word
 
+# When an ssh connection drops, the remote tmux never turns off the
+# terminal modes it enabled: focus events and modifyOtherKeys send
+# escape sequences that kick vi mode out of insert, mouse reporting
+# breaks selection. Turn them off before every prompt.
+_reset_terminal_modes() {
+	[[ "$TERM" == dumb ]] && return
+	# mouse (1000/1002/1003/1006), focus events, modifyOtherKeys
+	printf '\e[?1000l\e[?1002l\e[?1003l\e[?1006l\e[?1004l\e[>4m'
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _reset_terminal_modes
+
 setopt clobber
 
 # Fix git reset HEAD^
