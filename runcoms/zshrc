@@ -44,6 +44,30 @@ alias gvim='nvim'
 alias ssh-kr='ssh-keygen -R $*'
 alias weather='curl -s http://v2.wttr.in/Iracemapolis'
 
+# gwcd <branch>: cd to the worktree that has <branch> checked out
+# (falls back to matching the worktree directory name)
+gwcd() {
+	local dir
+	dir=$(git worktree list --porcelain 2>/dev/null | awk -v b="$1" '
+		/^worktree / { wt = substr($0, 10); n = split(wt, p, "/")
+		               if (p[n] == b && !alt) alt = wt }
+		/^branch /   { br = substr($0, 8); sub("^refs/heads/", "", br)
+		               if (br == b) { print wt; found = 1; exit } }
+		END          { if (!found && alt) print alt }')
+	if [[ -z "$dir" ]]; then
+		echo "gwcd: no worktree for '$1'" >&2
+		return 1
+	fi
+	cd "$dir"
+}
+_gwcd() {
+	local -a branches
+	branches=(${(f)"$(git worktree list --porcelain 2>/dev/null \
+		| awk '/^branch /{sub("^branch refs/heads/", ""); print}')"})
+	_describe 'worktree branch' branches
+}
+compdef _gwcd gwcd
+
 # If it's a centos / ubuntu, enable do_configure
 unset ID
 test -f /etc/os-release \
