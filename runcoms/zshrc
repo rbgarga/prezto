@@ -180,4 +180,10 @@ if [[ "$OSTYPE" == darwin* ]]; then
 	export ANTHROPIC_BASE_URL="http://127.0.0.1:8787"
 	export ENABLE_TOOL_SEARCH="true"
 	# <<< headroom persistent env <<<
+
+	# Run AI agents through the headroom proxy
+	for _cmd in claude codex opencode omp; do
+		alias $_cmd="headroom wrap $_cmd"
+	done
+	unset _cmd
 fi
